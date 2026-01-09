@@ -33,6 +33,30 @@ small{color:var(--muted)}
 p{margin:0 0 10px}
 ul,ol{margin:0 0 10px 18px}
 code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:8px}
+    /* Fix mobile overflow of horizontal dividers */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+hr, .divider, .rule, .separator {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* If divider is made via pseudo-elements */
+.divider::before, .divider::after,
+.rule::before, .rule::after,
+.separator::before, .separator::after {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Safer HR look */
+hr {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  margin: 16px 0;
+}
+
 </style>
 </head>
 <body>
